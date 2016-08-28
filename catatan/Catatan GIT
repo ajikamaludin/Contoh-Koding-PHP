@@ -1,0 +1,92 @@
+git config --global user.email "aji19kamaludin@gmail.com"	//tahap awal digunakan untuk mandiri sebagai managament file dan folder
+git config --global user.name "ajikamaludin"
+
+git init							//tahap pertama didalam directorynya
+git status							//cek status saja
+
+git add . / git commit -a -m 'di commit semua'			//di add atau dalam posisi stage
+git add /path/to/file
+git status
+
+git commit -m 'Masih Baru Segar'				//di commit
+
+git log
+git log --oneline
+git log nama.file
+
+git diff 							//melihat perubahan file
+git diff nama.file
+
+git checkout nama.file						//mengembalikan perubahan file 
+								//jika belum di staged atau commit
+git checkout nomerkomit nama.file				//jika ingin kembali ke beberapa commit sebelumnya
+git checkout HEAD~3 nama.file								
+
+git reset nama.file						//jika sudah dalam stage
+
+git revert nomerkomit -n					//membatalkan semua perubahan file
+
+#######################################################################################################################################
+---Pencabangan File 
+
+//pembuatan pencabangan , pencabangan digunakan agar satu fitur tidak diganggu fitu lainnya
+
+git branch crud							//membuat branc crud
+git checkout crud						//pindah ke branc crud
+git status							//memeriksa lokasi kita di branc
+
+ketika ada di dalam branc lain lalu meng add (staged) dan mengkomit file maka file tidak akan bisa diotak atik oleh branc lain
+
+//menggabungkan pencabangan file -- harus berada di master
+git merge namabranch						//menggabungakan namabranch dengan master
+git status 							//selalu periksa
+
+
+//meremote repository dari github
+git remote add mygithub https://github.com/ajikamaludin/NeT.git	//meremot repositori dari git nama folder tidak muncul tapi ananti ada disystem
+
+//pull-mengambil data dari github
+git pull mygithub master					//menarik semua file dari mygithub ke branc master
+
+//mengambil semua commit dan log dari mygithub
+git fetch mygithub						//menarik commit dan log
+
+//menggabungkan github master lokal dengan master remote
+git log mygithub/master --oneline				//log fetch dari remote repo
+git checkout master						//pindah ke master lokal
+git merge mygithub/master 					//menyatukan master lokal dengan branc yang aktif/master lokal
+
+//mengupload master lokal ke repo mygithub
+git push net master 
+Username for 'https://github.com': aji19kamaludin@gmail.com
+Password for 'https://aji19kamaludin@gmail.com@github.com': ********
+Counting objects: 87, done.
+
+//KONFLIK FILE KETIKA 2 ORANG SALING UPLOAD
+
+	ajikamaludin@codesaya:/code$ git commit -m 'revisi konflik navigasi.php'
+	[master 9h336b7] revisi konflik navigasi.php
+	1 file changed, 1 insertion(+)
+	ajikamaludin@codesaya:/code$ git add navigasi.php
+	ajikamaludin@codesaya:/code$ cat navigasi.php
+	<a href="<?php get_home_url(); ?>">Home</a>
+	ajikamaludin@codesaya:/code$ cat navigasi.php
+	<<<<<<< HEAD
+	<a href="/">Utama</a>
+	=======
+	<a href="<?php get_home_url(); ?>">Home</a>
+	>>>>>>> master
+
+
+//
+
+
+
+
+
+
+
+
+
+
+

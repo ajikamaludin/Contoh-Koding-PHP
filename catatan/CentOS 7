@@ -1,0 +1,84 @@
+Hal-hal yang harus anda kuasai di centos 7
+	!PERINGATAN SEMUA SYSTEM SERVICE DI CENTOS TIDAK MENYALA OTOMATIS SETELAH DI INSTALL
+1. Hal-hal yang dilakukan setelah install(ip,resolv,hostname,Firewall,SELinux)
+2. installasi webserver + database server (mysql) + install cms (drupal,wordpress,moodle) + mengaktifkan mod_rewrite + virtual_host and port
+3. installasi FTP & SSH
+#####4. Install DNS(Debian Wae)
+5. Install Mail
+6. OnlyOffice + Doncer + webmin + zabbix/cacti
+7. APP (OnlyOffice, Citadel, Docker
+
+Virtualisasi menggunakan Proxmox + data(FreeNAS)
+
+
+cd /home && curl -o latest -L https://securedownloads.cpanel.net/latest && sh latest
+
+
+##__________________________________________________________________________________________________________________________________________________________________
+------------- #Hal-hal yang dilakukan setelah installasi centos 7 : 
+1. mematikan firewall dan selnux
+	# systemctl stop firewalld 
+	# systemctl disable firewalld 
+	# vi /etc/selinux/config 
+
+SELINUX=disabled # change
+
+	# reboot
+
+2. check-pdate dan update Install APP Favorit anda (--#sudah#-- curl wget zip unzip rsync nano)
+	#yum check-update && yum update
+	#yum install vim-X11 vim-common vim-enhanced vim-minimal
+
+
+3. setting ip dan hostname #nmtui + #hostnamectl set-hostname server.lokal.lk
+
+4. add repo
+# yum install yum-plugin-priorities 
+# yum -y install epel-release  
+
+5. adduser #useradd aji
+	   #passwd aji
+
+---------- # Installasi WebServer dan database (httpd + mariadb)
+#yum -y install httpd 
+#vi /etc/httpd/conf/httpd.conf 
+ AllowOverride All
+ DirectoryIndex index.html index.cgi index.php
+ KeepAlive On 
+#systemctl start httpd
+#systemctl enable httpd
+
+# yum install php php-mbstring php-pear
+#vi /etc/php.ini 
+date.timezone = "Asia/Jakarta"
+
+#systemctl restart httpd
+
+#nano /var/www/html/index.html
+<h1>Hello World</h1>
+#nano /var/www/html/phpinfo.php
+<?php phpinfo(); ?>
+#nano /var/www/html/date.php
+<?php print date("d");print date("m");print date("Y"); ?>
+
+#yum install mariadb-server
+#systemctl start mariadb
+#systemctl enable mariadb
+#mysql_secure_installation
+
+#yum --enablerepo=epel install phpMyAdmin php-mysql php-mcrypt 
+#vi /etc/httpd/phpMyAdmin.conf
+line 15 draf ke 1
+Require ip 127.0.0.1 192.168.10.0/24
+line 32 draf ke 3
+Require ip 127.0.0.1 192.168.10.0/24
+
+#systemctl restart httpd
+
+-----------# Installasi VSFTP
+
+http://www.server-world.info/en/note?os=CentOS_7&p=ftp&f=1
+
+-----------# Installasi DNS-Server
+
+

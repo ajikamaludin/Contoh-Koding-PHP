@@ -1,0 +1,16 @@
+-----Tipe Data di PHP
+string =  data dalam bentuk karakter huruf seperti text
+interget = data berupa angka non-desimal dari -2,147,483,648 and 2,147,483,647.
+float = angka desimal dengan koma atau titik
+boolean = data berupa true / false
+array = tipe data yang digunakan untuk menyimpan beberapa values dalam satu variable
+object = tipe data yang menyimpan data dan informasi dalam bagaimana data tersebut diperoses
+NULL Value = NULL
+
+-----Beberap Fungsi String
+strlen('isi'); 			//digunakan untuk mengetahui jumlah karakter dalam data string - 3
+str_word_count('ada tiga kata'); // digunakan untuk mengetahui jumlah kata dalan data string - 3
+strrev("Hello world!"); 	// digunakan untuk membalik data string outputnya jasi  "!dlrow olleH"
+strpos("mencari data dari data","data");//digunakan untuk mencari kata spesifik dalam sebuah text string jika cocok maka akan mendapat hasil berupa lokasi jika tidak maka akan dikembalikan dengan FALSE ,, contohnya dikembalikan pada posisi ke 8
+
+
