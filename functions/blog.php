@@ -1,7 +1,7 @@
 <?php 
 function tampil_page($laman){
 	$perPage = 4;
-	$page    = isset($laman) ? (int)$_GET['halaman'] : 1;
+	$page    = isset($laman) ? (int)$laman : 1;
 	$start   = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 
 	$sql = "SELECT * FROM blog LIMIT $start, $perPage";
