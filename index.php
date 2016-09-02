@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 require_once 'core/init.php';
 
@@ -56,4 +57,38 @@ require_once 'view/header.php';
 </div>
 <?php
 require_once 'view/footer.php';
+=======
+require_once "view/header.php";
+?>
+
+<body>
+  <div class="tiap_artikel">
+    <h3>Judul Artikel</h3>
+    <p>
+      Ini isi Blognya
+    </p>
+    <p class="waktu"> 12 : 00 pm</p>
+    <p class="tag"> 12 : 00 pm</p>
+  </div>
+  <div class="tiap_artikel">
+    <h3>Judul Artikel</h3>
+    <p>
+      Ini isi Blognya
+    </p>
+    <p class="waktu"> 12 : 00 pm</p>
+    <p class="tag"> 12 : 00 pm</p>
+  </div>
+  <div class="tiap_artikel">
+    <h3>Judul Artikel</h3>
+    <p>
+      Ini isi Blognya
+    </p>
+    <p class="waktu"> 12 : 00 pm</p>
+    <p class="tag"> 12 : 00 pm</p>
+  </div>
+</body>
+
+<?php
+require_once "view/footer.php";
+>>>>>>> de13ef7d37264c6fdfe4d49f5f77c17d297d7911
 ?>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 $login = false;
@@ -22,3 +23,12 @@ if(isset($_SESSION['user'])){
 	<a href="login.php">LOGIN</a>
 	<?php endif; ?>
 </div>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Sederhana - CRUD</title>
+  <link rel="stylesheet" href="view/style.css"/>
+</head>
+<h1>Blog Sederhana</h1>
+>>>>>>> de13ef7d37264c6fdfe4d49f5f77c17d297d7911

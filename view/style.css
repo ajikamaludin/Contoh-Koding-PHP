@@ -1,4 +1,5 @@
 *{
+<<<<<<< HEAD
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
@@ -52,3 +53,16 @@ h2{
 #footer{
 	margin-top: 30px;
 }
+=======
+  margin: 0;padding: 0;
+}
+body{
+  margin: 40px auto;
+  width: 80%;
+}
+
+.tiap_artikel{
+  background-color: #394284
+  te
+}
+>>>>>>> de13ef7d37264c6fdfe4d49f5f77c17d297d7911
